@@ -10,7 +10,30 @@
   --bdr:rgba(90,60,30,0.12);
 }
 body{font-family:var(--font-sans);color:var(--td);background:transparent;}
-.wrap{max-width:900px;margin:0 auto;background:var(--cream);border-radius:16px;overflow:hidden;}
+.wrap {
+  max-width: 1200px; /* 从 900px 提升到 1200px */
+  margin: 2rem auto;
+  background: var(--cream);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05); /* 添加一点阴影增加高级感 */
+  transition: all 0.3s ease;
+}
+
+/* 针对超大屏幕的优化 */
+@media (min-width: 1400px) {
+  .wrap { max-width: 1350px; }
+  .stmt-grid { grid-template-columns: repeat(4, 1fr); } /* 宽屏下简介排成四列 */
+}
+
+/* 调整项目卡片在宽屏下的显示 */
+@media (min-width: 800px) {
+  .proj-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 桌面端项目列表变为两列并排 */
+    gap: 1.5rem;
+  }
+}
 
 nav{background:var(--cream);border-bottom:1px solid var(--bdr);padding:.75rem 1.5rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:200;}
 .nav-logo{font-size:14px;font-weight:500;color:var(--terra);cursor:pointer;white-space:nowrap;}
@@ -612,7 +635,7 @@ nav{background:var(--cream);border-bottom:1px solid var(--bdr);padding:.75rem 1.
       <div class="overview-card">
         <h5 class="t" data-zh="设计挑战" data-en="The challenge">The challenge</h5>
         <p class="t"
-          data-zh="悉尼大学校园内，奶茶杯的一次性使用问题日益严峻。研究发现，大多数学生虽具备可持续发展意识，却因"自己的行动无足轻重"的心理障碍，无法将意识转化为实际行动。Cupventure 正是基于这一洞察而生——通过游戏化奖励机制、实体集章卡与数字积分系统的结合，让每一次回收行为都产生可见、可感的正向反馈，从根本上改变用户的行为惯性。"
+          data-zh="悉尼大学校园内，奶茶杯的一次性使用问题日益严峻。研究发现，大多数学生虽具备可持续发展意识，却因自己的行动无足轻重的心理障碍，无法将意识转化为实际行动。Cupventure 正是基于这一洞察而生——通过游戏化奖励机制、实体集章卡与数字积分系统的结合，让每一次回收行为都产生可见、可感的正向反馈，从根本上改变用户的行为惯性。"
           data-en="On the University of Sydney campus, single-use bubble tea cups were generating significant waste. Research revealed that while most students had sustainability awareness, a key psychological barrier — feeling their individual actions were insignificant — prevented them from acting. Cupventure was designed around this insight: a gamified cup-return system combining physical stamp cards and digital points to make every recycling action feel visible, rewarding, and meaningful.">On the University of Sydney campus, single-use bubble tea cups were generating significant waste. Research revealed that while most students had sustainability awareness, a key psychological barrier — feeling their individual actions were insignificant — prevented them from acting. Cupventure was designed around this insight: a gamified cup-return system combining physical stamp cards and digital points to make every recycling action feel visible, rewarding, and meaningful.</p>
       </div>
     </div>
